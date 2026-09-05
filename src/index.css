@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ivory: #FAF6EF;
+  --gold-primary: #C9A84C;
+  --gold-metallic: #DFC06A;
+  --gold-dark: #9C7A3C;
+  --text-primary: #3D2817;
+  --text-secondary: #7A624E;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6EF;
+}
+::-webkit-scrollbar-thumb {
+  background: #DFC06A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A84C;
+}
+
+/* 3D Envelope Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Gold Metallic Foil Gradient */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #A27B2C 0%, #E7C970 35%, #9B7020 70%, #F5E19A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #C9A84C, #F5E2A8, #9C7A3C) 1;
+}
+
+.gold-box-shadow {
+  box-shadow: 0 15px 40px -10px rgba(156, 122, 60, 0.25), 0 0 20px 2px rgba(201, 168, 76, 0.15);
+}
+
+.wax-seal-shadow {
+  box-shadow: 0 10px 25px rgba(90, 20, 25, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+}
+
+/* Shimmer Animation Effect */
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.1) 0%, rgba(201, 168, 76, 0.35) 50%, rgba(201, 168, 76, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Floating Flower Petals Animation */
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(80px, 105vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  top: -50px;
+  pointer-events: none;
+  z-index: 20;
+  animation: petalFall linear infinite;
+}
